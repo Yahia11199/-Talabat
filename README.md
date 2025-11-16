@@ -1,7 +1,7 @@
 ## 🍔 Talabat RESTful API
 <p align="center"> <strong>Enterprise-Grade RESTful API for Food Delivery Platform built with ASP.NET Core 9.0 🚀</strong> </p> 
 <p align="center"> <a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-9.0-blueviolet?style=for-the-badge&logo=dotnet" /></a> 
-  <a href="https://github.com/Yahia11199"><img src="https://img.shields.io/badge/Made%20By-Ahmed%20Ragheb-black?style=for-the-badge&logo=github" /></a> 
+  <a href="https://github.com/Yahia11199"><img src="https://img.shields.io/badge/Made%20By-Yahia Esmail-black?style=for-the-badge&logo=github" /></a> 
 </p>
 
 ---
