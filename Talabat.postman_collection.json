@@ -1,0 +1,1321 @@
+{
+	"info": {
+		"_postman_id": "fdfc66eb-d504-4f14-8ada-cee98901edb1",
+		"name": "Talabat",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "43514269",
+		"_collection_link": "https://ahmedragheb-3632581.postman.co/workspace/Ahmed-Ragheb's-Workspace~fcf3f41c-fb10-469d-8da7-df0289d32223/collection/43514269-fdfc66eb-d504-4f14-8ada-cee98901edb1?action=share&source=collection_link&creator=43514269"
+	},
+	"item": [
+		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "Login",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"test@test.com\",\r\n  \"password\": \"P@ssword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Register",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\":\"admin@test.com\",\r\n    \"password\":\"P@ssword123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"string\",\r\n  \"refreshToken\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/refresh",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"refresh"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Revoke Refresh Token",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"token\": \"string\",\r\n  \"refreshToken\": \"string\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/auth/revoke-refresh-token",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"auth",
+								"revoke-refresh-token"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Accounts",
+			"item": [
+				{
+					"name": "Get User Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJmOTkxZTIxMS03YjQ5LTRjMWYtYWE1NC01YTUxOTdlNjdiZWIiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJnaXZlbl9uYW1lIjoiQWhtZWQiLCJmYW1pbHlfbmFtZSI6Ikhhc3NhbiIsImp0aSI6IjE5MmIyZDQ5LTUzZTktNDAyNy05MmMwLWYyZDY3ZTIwZWRhNCIsImV4cCI6MTc2MjAwMjE3NSwiaXNzIjoiVGFsYWJhdEFwcCIsImF1ZCI6IlRhbGFiYXRBcHAgdXNlcnMifQ.8iKo7Hzrde-MRsSPPexWpw1X_mHSg0GeC0DtsH-lN9s",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/me",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"me"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Profile",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2IyOTAxMC0wNmE2LTRlZmYtYWM4ZS0xMDE0YzdiOTliNzgiLCJlbWFpbCI6InRlc3QzQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiI4YjI0NGE3Ny02YjFmLTQxZDQtOTQ4OS1jODQxMjJkZGJiZTEiLCJleHAiOjE3NTM2MjIwODYsImlzcyI6IlN1cnZleUJhc2tldEFwcCIsImF1ZCI6IlN1cnZleUJhc2tldEFwcCB1c2VycyJ9.32Ee8py-_KQ8-QKtOp9adGgrCkFOrZY78qKF4hOlNJI",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"firstName\": \"Ahmed_Updated\",\r\n    \"lastName\": \"Ragheb_Updated\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/me/info",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"me",
+								"info"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Change Password",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJjM2IyOTAxMC0wNmE2LTRlZmYtYWM4ZS0xMDE0YzdiOTliNzgiLCJlbWFpbCI6InRlc3QzQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkX1VwZGF0ZWQiLCJmYW1pbHlfbmFtZSI6IlJhZ2hlYl9VcGRhdGVkIiwianRpIjoiNGUzMjk0MmEtMTQxZS00Zjc1LThmYmMtY2Y1ZDY1ZDhlMmM2IiwiZXhwIjoxNzUzNjI0MzE5LCJpc3MiOiJTdXJ2ZXlCYXNrZXRBcHAiLCJhdWQiOiJTdXJ2ZXlCYXNrZXRBcHAgdXNlcnMifQ.baw2Z4JAGw69kLX-flBy4Ii4DnSbX9DWVmTNLiD-kRQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"currentPassword\": \"P@ssword123\",\r\n    \"newPassword\": \"P@ssword1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{Host}}/me/change-password",
+							"host": [
+								"{{Host}}"
+							],
+							"path": [
+								"me",
+								"change-password"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Stores",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/stores",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Avaliable",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/stores/available",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"available"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/stores/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add By Owner",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Pizza House\",\r\n  \"description\": \"The best Italian pizza in town with fresh ingredients and wood-fired taste.\",\r\n  \"address\": \"123 Nile Street, Cairo\",\r\n  \"category\": \"Restaurant\",\r\n  \"phoneNumber\": \"01098765432\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add By Admin",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "\r\n{\r\n  \"name\": \"Pizza House\",\r\n  \"description\": \"The best Italian pizza in town with fresh ingredients and wood-fired taste.\",\r\n  \"address\": \"123 Nile Street, Cairo\",\r\n  \"category\": \"Restaurant\",\r\n  \"phoneNumber\": \"01098765432\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIyNGZmMmFmZi0xNDAyLTRhYTctYWQ3OC03NmQ1YmVlODA4NTYiLCJlbWFpbCI6InRlc3RAdGVzdC5jb20iLCJnaXZlbl9uYW1lIjoiUGl6emEgSG91c2UiLCJmYW1pbHlfbmFtZSI6Ik93bmVyIiwianRpIjoiM2YxZTdkMGMtMTliNi00OGJlLTljZTAtZTRlODk2YmNhZTMxIiwicm9sZXMiOlsiT3duZXIiXSwiZXhwIjoxNzYyNDMwNjA2LCJpc3MiOiJUYWxhYmF0QXBwIiwiYXVkIjoiVGFsYWJhdEFwcCB1c2VycyJ9.IxMU9lt9jTXDXsZFs96JWkKOBf8kKy1QH_hAAC9BQio",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"Pizza House\",\r\n  \"description\": \"The best Italian pizza in town with fresh ingredients and wood-fired taste.\",\r\n  \"address\": \"123 Nile Street, Cairo\",\r\n  \"category\": \"Restaurant\",\r\n  \"phoneNumber\": \"01119856195\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"update store\",\r\n  \"description\": \"description asdasd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/1/toggle-status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"1",
+								"toggle-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"update store\",\r\n  \"description\": \"description asdasd\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/stores/1/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/stores/2/products/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"2",
+								"products",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add New",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MDlhM2Y4Zi00M2I2LTQ0NWItOGQxNC0zZDNiYTZjZDg5ZjQiLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiIzOWM3NzBjZi00YjcwLTQyODUtODEzNS01MTIxNDM4MTgxMWIiLCJleHAiOjE3NjE2NjM2MDIsImlzcyI6IlRhbGFiYXRBcHAiLCJhdWQiOiJUYWxhYmF0QXBwIHVzZXJzIn0.F-5G2FR4r6nkv_PV8uRwVu0tTDub5O_dDaa-IuG27K8",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n   \"name\": \"Margherita Pizza\",\r\n  \"description\": \"Fresh tomatoes, basil, and mozzarella on a thin Italian crust.\",\r\n  \"price\": 110.00,\r\n  \"quantity\": 12,\r\n  \"department\": \"Pizza\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/1/products",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"1",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiJkZTYyOGE4Yi1jN2ZkLTQzNGQtOGMwOS0yMzI0NmMyZWEwNGUiLCJlbWFpbCI6InRlc3QxQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IlRlY2ggV29ybGQiLCJmYW1pbHlfbmFtZSI6Ik93bmVyIiwianRpIjoiODMwOWUxNTEtYTFhNi00MzBiLWE0NGYtNDBkOTZjNzc3Y2Y5Iiwicm9sZXMiOlsiT3duZXIiXSwiZXhwIjoxNzYyMTEyMDIyLCJpc3MiOiJUYWxhYmF0QXBwIiwiYXVkIjoiVGFsYWJhdEFwcCB1c2VycyJ9.cAtXzWOOcyPzqD7Rd3a7pndI1pAozYLzPyX-N--Adiw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n        \"name\": \"Dell Inspiron 15\",\r\n        \"description\": \"15-inch laptop with Intel i5, 8GB RAM, and 512GB SSD.\",\r\n        \"department\": \"Laptops\",\r\n        \"storeId\": 2,\r\n        \"quantity\": 4\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/2/products/6",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"2",
+								"products",
+								"6"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Status",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"update store\",\r\n  \"description\": \"description asdasd\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/1/toggle-status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"1",
+								"toggle-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"name\": \"update store\",\r\n  \"description\": \"description asdasd\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/api/stores/2",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"stores",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Get Cart",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Add Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MDlhM2Y4Zi00M2I2LTQ0NWItOGQxNC0zZDNiYTZjZDg5ZjQiLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiJlYzAxNzFjZS1jMTM1LTRkYTEtYmU4OS0zMDRjYjIzNjA4MTMiLCJleHAiOjE3NjE3NDk0MjcsImlzcyI6IlRhbGFiYXRBcHAiLCJhdWQiOiJUYWxhYmF0QXBwIHVzZXJzIn0.d2ptplk_PDVAoDFqGU5ysIdb2-ebNpUOG63YDEaAeDM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"Quantity\": 1,\r\n    \"ProductId\": 7\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Carts/items",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Carts",
+								"items"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Remove Item",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MDlhM2Y4Zi00M2I2LTQ0NWItOGQxNC0zZDNiYTZjZDg5ZjQiLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiJlYzAxNzFjZS1jMTM1LTRkYTEtYmU4OS0zMDRjYjIzNjA4MTMiLCJleHAiOjE3NjE3NDk0MjcsImlzcyI6IlRhbGFiYXRBcHAiLCJhdWQiOiJUYWxhYmF0QXBwIHVzZXJzIn0.d2ptplk_PDVAoDFqGU5ysIdb2-ebNpUOG63YDEaAeDM",
+									"type": "string"
+								}
+							]
+						},
+						"method": "DELETE",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "text"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Carts/items/1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Carts",
+								"items",
+								"1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Clear Cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Carts/clear",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Carts",
+								"clear"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "CartItems",
+			"item": [
+				{
+					"name": "Get All Items",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/CartItems",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"CartItems"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Item",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Update Quantity",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MDlhM2Y4Zi00M2I2LTQ0NWItOGQxNC0zZDNiYTZjZDg5ZjQiLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiI1MDIzODYyYy1hY2FiLTRlMTMtOGY3NS0zY2YzZDhiMDAzM2QiLCJleHAiOjE3NjE3NTM4MDYsImlzcyI6IlRhbGFiYXRBcHAiLCJhdWQiOiJUYWxhYmF0QXBwIHVzZXJzIn0.uwMeN0yyLkPtfAV_J3ArUm_XKSWTb2ojKFICY643nCg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"quantity\": 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/CartItems/10",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"CartItems",
+								"10"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Orders",
+			"item": [
+				{
+					"name": "Get Orders",
+					"request": {
+						"method": "GET",
+						"header": []
+					},
+					"response": []
+				},
+				{
+					"name": "Create Order",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MDlhM2Y4Zi00M2I2LTQ0NWItOGQxNC0zZDNiYTZjZDg5ZjQiLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiJjMDNjMTc1Yy1iYTE0LTRiMmItYjBiNS1mNGEzMmVkZmYxMTYiLCJleHAiOjE3NjE3NjgzMjMsImlzcyI6IlRhbGFiYXRBcHAiLCJhdWQiOiJUYWxhYmF0QXBwIHVzZXJzIn0.K_1TZaB6_6yxh4xVrs7AFmffYQY--E7cnsP-mZ5mFWg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/orders",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orders"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Order Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiI5MDlhM2Y4Zi00M2I2LTQ0NWItOGQxNC0zZDNiYTZjZDg5ZjQiLCJlbWFpbCI6ImFkbWluQHRlc3QuY29tIiwiZ2l2ZW5fbmFtZSI6IkFobWVkIiwiZmFtaWx5X25hbWUiOiJSYWdoZWIiLCJqdGkiOiJjMDNjMTc1Yy1iYTE0LTRiMmItYjBiNS1mNGEzMmVkZmYxMTYiLCJleHAiOjE3NjE3NjgzMjMsImlzcyI6IlRhbGFiYXRBcHAiLCJhdWQiOiJUYWxhYmF0QXBwIHVzZXJzIn0.K_1TZaB6_6yxh4xVrs7AFmffYQY--E7cnsP-mZ5mFWg",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"status\": 0\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/orders/1/status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"1",
+								"status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Payments",
+			"item": [
+				{
+					"name": "Pay",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"paymentToken\": \"\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/orders/1/payments",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"orders",
+								"1",
+								"payments"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Roles",
+			"item": [
+				{
+					"name": "Get All",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiMDE5OWYyOTUtZjQwOS03YzBhLWIyMzQtNjEzYWJjZDVkMmZkIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc2MDcxMzMzNywiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.Y7fabcr_dpsLmSUfNGDohyLkWJVeGabCNQU6N7SgOF4",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/roles?includeDisabled=true",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "includeDisabled",
+									"value": "true"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get Active",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiMDE5OWYyMDItNTYxNC03NDNjLThjMGYtNzk2OTU4YTg2M2FiIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc2MDcwMzY2MywiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.bwsuEp_4d72OelWUWZW4H-NDcOnN44n1_xHQ0IqZZGQ",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/roles?includeDisabled=false",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							],
+							"query": [
+								{
+									"key": "includeDisabled",
+									"value": "false"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiNGMxOTI0NTQtYTExMi00ODFiLTlkOGItY2RhODZlOWE0MzU0Iiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1Nzc1NDI0MywiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.aE9r6e6ll1UIFzQVlY3V1mmv5zl4iTXZuS6KPROlSBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/roles/d2082b13-1c6c-465a-a5f8-96998cd4a58e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"d2082b13-1c6c-465a-a5f8-96998cd4a58e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiMTI1ZDc2YjQtZjI5My00ZmIyLWJiY2ItZDk5MzEzOTE3ZGUyIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1NzYxMzIyMSwiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.mKBfj76OHAbd5fxtTHqeO3L6LC1PKUjsFMUqGMr0eTw",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"PollManager\",\r\n    \"Permissions\": [\r\n        \"cars:read\", \r\n        \"cars:add\",\r\n        \"cars:update\",\r\n        \"cars:delete\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/roles",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"roles"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Role",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiYWM2MmViYzMtYjU5OS00MzhhLWI0OWMtNDM1YTMzM2UxOTUwIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1NzYxODEzMCwiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.6VNjqKiujwXkHHVSxIKBI1wJdk7eji5Z5izFnkpowCs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"name\": \"CarManager\",\r\n    \"Permissions\": [\r\n        \"cars:read\",\r\n        \"cars:add\",\r\n        \"cars:update\"\r\n    ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/roles/d2082b13-1c6c-465a-a5f8-96998cd4a58e",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"d2082b13-1c6c-465a-a5f8-96998cd4a58e"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiYWM2MmViYzMtYjU5OS00MzhhLWI0OWMtNDM1YTMzM2UxOTUwIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1NzYxODEzMCwiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.6VNjqKiujwXkHHVSxIKBI1wJdk7eji5Z5izFnkpowCs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/roles/d2082b13-1c6c-465a-a5f8-96998cd4a58e/toggle-status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"roles",
+								"d2082b13-1c6c-465a-a5f8-96998cd4a58e",
+								"toggle-status"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Users",
+			"item": [
+				{
+					"name": "Get All Users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiMmE0OWUyZGMtOTU4OC00NzI0LThkMGYtMDQxNjBlOWRjZjFlIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1Nzg0ODY4OSwiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.FwsgEoTddNXxCks5OEII3FAmMYNea_7DgqgSM9BLAzs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"admin@car-rental.com\",\r\n  \"password\": \"P@ssword123\"\r\n}"
+						},
+						"url": {
+							"raw": "{{host}}/api/Users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTlhNDA3MS1mYzI5LTc2N2QtYjZlOS05YmZhZTU2NWFlYzEiLCJlbWFpbCI6ImFkbWluQHRhbGFiYXQuY29tIiwiZ2l2ZW5fbmFtZSI6IlRhbGFiYXQiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiMGVlNGNlNzUtOGExNi00OTE5LWIzZTYtYzEwMmVjNjQ5YjU1Iiwicm9sZXMiOlsiQWRtaW4iXSwiZXhwIjoxNzYyMDg3NzcwLCJpc3MiOiJUYWxhYmF0QXBwIiwiYXVkIjoiVGFsYWJhdEFwcCB1c2VycyJ9.TjaLhIqcTSSSYgGX01gB4CZTtN6RC47lmX1BY7tIRVY",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Users/019a4071-fc29-767d-b6e9-9bfae565aec1",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								"019a4071-fc29-767d-b6e9-9bfae565aec1"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiN2EwYTllZWQtMjBkOS00N2EyLTlmNDItNzFiYmJhMzM5Y2VmIiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1NzY5ODM0MywiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.H8Agb4ecQBIPLyHgmPKG_i0z9cGcctYt_OJNOM4Hwhs",
+									"type": "string"
+								}
+							]
+						},
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"ahmed@test.com\",\r\n  \"firstName\": \"first\",\r\n  \"lastName\": \"last\",\r\n  \"password\": \"P@ssword123\",\r\n  \"roles\": [\r\n        \"CarManager\",\r\n        \"Admin\"\r\n  ]\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Users",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Users"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTlhNDA3MS1mYzI5LTc2N2QtYjZlOS05YmZhZTU2NWFlYzEiLCJlbWFpbCI6ImFkbWluQHRhbGFiYXQuY29tIiwiZ2l2ZW5fbmFtZSI6IlRhbGFiYXQiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiYzA1OGNlMTctM2E5Ny00OWNlLWJhODgtOWRhY2Y2ZDFmY2U3Iiwicm9sZXMiOlsiQWRtaW4iXSwiZXhwIjoxNzYyMTEwMjM4LCJpc3MiOiJUYWxhYmF0QXBwIiwiYXVkIjoiVGFsYWJhdEFwcCB1c2VycyJ9.VSnPJNn2oYiFf0JV50iVrOZyfv5kyiScs0kc9Q29BtA",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"email\": \"test2@test.com\",\r\n    \"firstName\": \"Pizza House\",\r\n    \"lastName\": \"Owner\",\r\n    \"roles\": \r\n    [\r\n        \"Owner\"\r\n    ]\r\n}\r\n     \r\n",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{host}}/api/Users/24ff2aff-1402-4aa7-ad78-76d5bee80856",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								"24ff2aff-1402-4aa7-ad78-76d5bee80856"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Toggle Status",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiNGMxOTI0NTQtYTExMi00ODFiLTlkOGItY2RhODZlOWE0MzU0Iiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1Nzc1NDI0MywiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.aE9r6e6ll1UIFzQVlY3V1mmv5zl4iTXZuS6KPROlSBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Users/10350d2f-c578-45b8-a3a3-cfb86413dddb/toggle-status",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								"10350d2f-c578-45b8-a3a3-cfb86413dddb",
+								"toggle-status"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Unlock User",
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJzdWIiOiIwMTk5MzJkMC1jNTJjLTc2NWMtYTMxOS1iYmYyMTcxYmJjZTIiLCJlbWFpbCI6ImFkbWluQGNhci1yZW50YWwuY29tIiwiZ2l2ZW5fbmFtZSI6IkNhciBSZW50YWwiLCJmYW1pbHlfbmFtZSI6IkFkbWluIiwianRpIjoiNGMxOTI0NTQtYTExMi00ODFiLTlkOGItY2RhODZlOWE0MzU0Iiwicm9sZXMiOlsiQWRtaW4iXSwicGVybWlzc2lvbnMiOlsiYm9va2luZ3M6YWRkIiwiYm9va2luZ3M6ZGVsZXRlIiwiYm9va2luZ3M6cmVhZCIsImJvb2tpbmdzOnVwZGF0ZSIsImNhcnM6YWRkIiwiY2FyczpkZWxldGUiLCJjYXJzOnJlYWQiLCJjYXJzOnVwZGF0ZSIsInJlc3VsdHM6cmVhZCIsInJldHVybnM6YWRkIiwicmV0dXJuczpyZWFkIiwicm9sZXM6YWRkIiwicm9sZXM6cmVhZCIsInJvbGVzOnVwZGF0ZSIsInRyYW5zYWN0aW9uczphZGQiLCJ0cmFuc2FjdGlvbnM6cmVhZCIsInRyYW5zYWN0aW9uczp1cGRhdGUiLCJ1c2VyczphZGQiLCJ1c2VyczpyZWFkIiwidXNlcnM6dXBkYXRlIl0sImV4cCI6MTc1Nzc1NDI0MywiaXNzIjoiQ2FyUmVudGFsQXBwIiwiYXVkIjoiQ2FyUmVudGFsQXBwIHVzZXJzIn0.aE9r6e6ll1UIFzQVlY3V1mmv5zl4iTXZuS6KPROlSBo",
+									"type": "string"
+								}
+							]
+						},
+						"method": "PUT",
+						"header": [],
+						"url": {
+							"raw": "{{host}}/api/Users/10350d2f-c578-45b8-a3a3-cfb86413dddb/unlock",
+							"host": [
+								"{{host}}"
+							],
+							"path": [
+								"api",
+								"Users",
+								"10350d2f-c578-45b8-a3a3-cfb86413dddb",
+								"unlock"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Health Checks",
+			"request": {
+				"method": "GET",
+				"header": []
+			},
+			"response": []
+		}
+	]
+}

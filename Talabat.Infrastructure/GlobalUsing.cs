@@ -1,0 +1,11 @@
+﻿global using Microsoft.AspNetCore.Http;
+global using Microsoft.AspNetCore.Identity;
+global using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore;
+global using Microsoft.EntityFrameworkCore.Metadata.Builders;
+global using Talabat.Application.Common.Interfaces;
+global using Talabat.Application.Common.Interfaces.Repositories;
+global using Talabat.Domain.Common;
+global using Talabat.Domain.Consts;
+global using Talabat.Domain.Entities;
+global using Talabat.Infrastructure.Persistence;
