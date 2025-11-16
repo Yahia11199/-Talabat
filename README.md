@@ -1,8 +1,7 @@
 ## 🍔 Talabat RESTful API
 <p align="center"> <strong>Enterprise-Grade RESTful API for Food Delivery Platform built with ASP.NET Core 9.0 🚀</strong> </p> 
 <p align="center"> <a href="https://dotnet.microsoft.com/"><img src="https://img.shields.io/badge/.NET-9.0-blueviolet?style=for-the-badge&logo=dotnet" /></a> 
-  <a href="https://talabat-app.runasp.net/swagger/index.html"><img src="https://img.shields.io/badge/Live%20Demo-MonsterASP-success?style=for-the-badge" /></a>
-  <a href="https://github.com/Ahmed-Ragheb2003"><img src="https://img.shields.io/badge/Made%20By-Ahmed%20Ragheb-black?style=for-the-badge&logo=github" /></a> 
+  <a href="https://github.com/Yahia11199"><img src="https://img.shields.io/badge/Made%20By-Ahmed%20Ragheb-black?style=for-the-badge&logo=github" /></a> 
 </p>
 
 ---
@@ -97,12 +96,6 @@ Talabat
 | 🌐 **CORS Configuration**        | Secure client access control              |
 
 ---
-## 🌍 Live Demo
-🚀 **[Explore API on Swagger UI](https://talabat-app.runasp.net/swagger/index.html)**  
-🛠️ Hosted using **RunASP Cloud**        
-📊 Includes versioned endpoints, caching, and JWT auth flow.
-
----
 
 ## 🧾 Sample API Endpoints
 
@@ -126,7 +119,7 @@ Talabat
 
 1️⃣ **Clone Repository**
 ```bash
-git clone https://github.com/Ahmed-Ragheb2003/TalabatAPI.git
+git clone https://github.com/Yahia11199/-Talabat.git
 cd TalabatAPI
 ```
 
@@ -184,16 +177,6 @@ https://localhost:5001/swagger/index.html
 | **MonsterASP**         | API Hosting             |
 | **GitHub Actions**     | Build & Test Automation |
 | **EF Core Migrations** | Database Versioning     |
-
----
-
-## 🧠 API Documentation & Testing
-
-📘 **Swagger UI:**  
-[https://talabat-app.runasp.net/swagger/index.html](https://talabat-app.runasp.net/swagger/index.html)
-
-🧪 **Postman Collection:**  
-[📥 Download Postman JSON](https://github.com/Ahmed-Ragheb2003/Talabat/blob/master/Talabat.postman_collection.json)
 
 ---
 
